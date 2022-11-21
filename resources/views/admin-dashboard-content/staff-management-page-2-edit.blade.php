@@ -87,7 +87,7 @@
             {{-- <div class="col-md-4 mb-3">
               <label for="position">Position</label>
               <input type="text" class="form-control" id="position" name="position" placeholder="Enter Position/Role" value="{{$staff_data[0]->position}}" required>
-            </div> --}}
+            </div>--}}
 
           </div>
 
