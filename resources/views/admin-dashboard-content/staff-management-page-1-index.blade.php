@@ -5,7 +5,7 @@
 @if($errors->any())
   @foreach ($errors->all() as $error)
       <div id="errorBox" style="text-align:center;margin-top:20px;" class="alert alert-danger col-md-12 alert-dismissible fade show" role="alert">
-          <strong>{!!$error!!}</strong>
+          <strong style="color: white">{!!$error!!}</strong>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -61,32 +61,32 @@
 
             <div class="col-md-4 mb-3">
               <label for="staff_id">Roll No.</label>
-              <input type="text" class="form-control" id="staff_id" name="staff_id" placeholder="Enter Roll No." required>
+              <input type="text" class="form-control" id="staff_id" name="staff_id" placeholder="Enter Roll No." autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="first_name">First Name</label>
-              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" required>
+              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="last_name">Last Name</label>
-              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="date_of_birth">Date of Birth</label>
-              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="email">BIT Sathy mail</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="phone_number">Phone Number</label>
-              <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number" required>
+              <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number" autocomplete="off" required>
             </div>
 
             {{-- <div class="col-md-4 mb-3">
@@ -139,6 +139,9 @@
 
               </tbody>
           </table>
+          <div>
+            <button type="button" class="btn btn-success">Import</button>
+          </div>
 
       </div>
 </div>

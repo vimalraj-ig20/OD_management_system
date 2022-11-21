@@ -64,7 +64,7 @@
 
                                 <div class="form-check form-check-inline mb-3">
                                     <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="staff">
-                                    <label class="form-check-label" for="inlineRadio2">Staff Login</label>
+                                    <label class="form-check-label" for="inlineRadio2">Student Login</label>
                                 </div>
                                 <div class="input-group center mb-3">
                                     <button type="submit" value="Login" class="btn btn-login btn-round">LOG IN</button>

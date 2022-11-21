@@ -61,7 +61,9 @@
 
           <div class="card text-white bg-dark mb-3">
             <div class="card-header bg-dark ">
-              <strong>{{$data->date_of_leave}} ({{$data->firstname}} {{$data->lastname}})</strong>
+                From Date: <strong>{{ $data->from_date }}</strong><br>To Date:<strong>{{ $data->to_date }}</strong><br>Session: <strong>{{ $data->session }}</strong>
+                <br>Req_By: <strong>{{ $data->firstname}} {{ $data->lastname}}</strong>
+
               <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
             </div>
             <div class="card-body">

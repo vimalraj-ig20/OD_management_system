@@ -61,27 +61,27 @@
 
             <div class="col-md-4 mb-3">
               <label for="first_name">First Name</label>
-              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" value="{{$staff_data[0]->firstname}}" required>
+              <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" value="{{$staff_data[0]->firstname}}" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="last_name">Last Name</label>
-              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" value="{{$staff_data[0]->lastname}}" required>
+              <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" value="{{$staff_data[0]->lastname}}" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="date_of_birth">Date of Birth</label>
-              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{$staff_data[0]->dob}}" required>
+              <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{$staff_data[0]->dob}}" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" value="{{$staff_data[0]->email}}" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address" value="{{$staff_data[0]->email}}" autocomplete="off" required>
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="phone_number">Phone Number</label>
-              <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number" value="{{$staff_data[0]->phone_number}}" required>
+              <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter Phone Number" value="{{$staff_data[0]->phone_number}}" autocomplete="off" required>
             </div>
 
             {{-- <div class="col-md-4 mb-3">

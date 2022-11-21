@@ -73,14 +73,14 @@
         <div class="form-group row">
           <label for="username" class="col-sm-2 col-form-label">Username</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" autocomplete="off" required>
           </div>
         </div>
 
         <div class="form-group row">
           <label for="password" class="col-sm-2 col-form-label">Password</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            <input type="text" class="form-control" id="password" name="password" placeholder="Enter password" autocomplete="off" required>
           </div>
         </div>
 

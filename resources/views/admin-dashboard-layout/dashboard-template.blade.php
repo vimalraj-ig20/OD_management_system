@@ -28,7 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav  sidebar sidebar-dark accordion bg-img-1" id="accordionSidebar">
+        <ul class="navbar-nav  sidebar sidebar-dark accordion bg-gradient-primary" id="accordionSidebar">
             {{-- bg-gradient-primary --}}
 
             <!-- Sidebar - Brand -->

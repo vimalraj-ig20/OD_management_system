@@ -258,13 +258,13 @@
                 <div class="card text-white bg-dark mb-3">
                     @if ($data->approval_status == '[ACCEPTED]')
                         <div class="card-header bg-success">
-                            <strong>{{ $data->date_of_leave }} (Accepted)</strong>
+                            <strong>From Date: {{ $data->from_date }}  To Date: {{ $data->to_date }} Session: {{ $data->session }}(Accepted)</strong>
                             <i class="float-right" style="font-size:85%;">Request sent on :-
                                 {{ $data->date_of_request }}</i>
                         </div>
                     @elseif($data->approval_status == '[DECLINED]')
                         <div class="card-header bg-danger">
-                            <strong>{{ $data->date_of_leave }} (Declined)</strong>
+                            <strong>From Date: {{ $data->from_date }}  To Date: {{ $data->to_date }} Session: {{ $data->session }}(Declined)</strong>
                             <i class="float-right" style="font-size:85%;">Request sent on :-
                                 {{ $data->date_of_request }}</i>
                         </div>

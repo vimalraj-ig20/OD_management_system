@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Redirect;
-use Session;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+
 
 class DatabaseController extends Controller
 {
@@ -21,7 +22,7 @@ class DatabaseController extends Controller
           'last_name' => 'required',
           'date_of_birth' => 'required',
           'email' => 'required',
-          'phone_number' => 'required',
+          'phone_number' => 'required|min:10|max:10',
         //   'position' => 'required',
         ]);
 
@@ -81,7 +82,7 @@ class DatabaseController extends Controller
           'last_name' => 'required',
           'date_of_birth' => 'required',
           'email' => 'required',
-          'phone_number' => 'required',
+          'phone_number' => 'required|min:10|max:10',
         //   'position' => 'required',
         ]);
 
@@ -418,8 +419,8 @@ class DatabaseController extends Controller
        $this->validate($request, [
          'type_of_leave' => 'required',
          'description' => 'required',
-         'from_date' => 'required',
-         'to_date' => 'required',
+         'from_date' => 'required|date',
+         'to_date' => 'required|date|after_or_equal:from_date',
          'session' => 'required',
        ]);
 

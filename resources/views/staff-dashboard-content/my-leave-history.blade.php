@@ -67,13 +67,13 @@
                 <option value="All" selected >All</option>
                 <option value="Sick leave">Sick leave</option>
                 <option value="Casual leave">Casual leave</option>
-                <option value="Duty Leave">Duty Leave</option>
-                <option value="Maternity leave">Maternity leave</option>
-                <option value="Paternity leave">Paternity leave</option>
+                <option value="Onduty External">Onduty External</option>
+                <option value="Onduty Internal">Onduty Internal</option>
+                {{-- <option value="Paternity leave">Paternity leave</option>
                 <option value="Bereavement leave">Bereavement leave</option>
                 <option value="Compensatory leave">Compensatory leave</option>
                 <option value="Sabbatical leave">Sabbatical leave</option>
-                <option value="Unpaid Leave">Unpaid Leave</option>
+                <option value="Unpaid Leave">Unpaid Leave</option> --}}
 
               </select>
             </div>
@@ -81,7 +81,9 @@
             <div class="col-md-4 mb-3">
               <label for="year">Year</label>
 
-              <select class="form-control" name = "year" id="year" aria-label="Default select example" required>
+              <input type="text" class="form-control" name="year" id="datepicker"  placeholder="eg.'2022'" autocomplete="off"/>
+
+              {{-- <select class="form-control" name = "year" id="year" aria-label="Default select example" required>
 
                 <option value="All" selected>All</option>
                 <option value='2021'>2021</option>
@@ -184,7 +186,7 @@
                 <option value='2118'>2118</option>
                 <option value='2119'>2119</option>
                 <option value='2120'>2120</option>
-                <option value='2121'>2121</option>
+                <option value='2121'>2121</option> --}}
 
               </select>
             </div>
@@ -245,12 +247,12 @@
           <div class="card text-white bg-dark mb-3">
             @if($data->approval_status =="[ACCEPTED]")
               <div class="card-header bg-success">
-                <strong>{{$data->date_of_leave}} (Accepted)</strong>
+                <strong>From Date:{{$data->from_date}} To Date:{{$data->to_date}} Session: {{$data->session}} (Accepted)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>
             @elseif($data->approval_status =="[DECLINED]")
               <div class="card-header bg-danger">
-                <strong>{{$data->date_of_leave}} (Declined)</strong>
+                <strong>From Date:{{$data->from_date}} To Date:{{$data->to_date}} Session: {{$data->session}} (Declined)</strong>
                 <i class="float-right" style="font-size:85%;">Request sent on :- {{$data->date_of_request}}</i>
               </div>
             @endif

@@ -59,9 +59,9 @@
                             <option selected disabled>Select a leave type</option>
                             <option value="Sick leave">Sick leave</option>
                             <option value="Casual leave">Casual leave</option>
-                            <option value="Onduty External">Onduty External</option>
-                            <option value="Onduty Internal">Onduty Internal</option>
-              {{-- <option value="Paternity leave">Paternity leave</option>
+                            <option value="Duty Leave">Onduty Leave</option>
+                            {{-- <option value="Maternity leave">Maternity leave</option>
+              <option value="Paternity leave">Paternity leave</option>
               <option value="Bereavement leave">Bereavement leave</option>
               <option value="Compensatory leave">Compensatory leave</option>
               <option value="Sabbatical leave">Sabbatical leave</option>
