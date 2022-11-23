@@ -16,7 +16,8 @@ use App\Http\Controllers\DatabaseController;
 |
 */
 
-Route::get('/',[PageController::class, 'ViewLoginPageController']);
+Route::get('/', [PageController::class, 'ViewLoginPageController']);
+//[PageController::class, 'ViewLoginPageController']
 
 Route::post('/handle-login',[LoginController::class, 'HandleLoginContoller']);
 

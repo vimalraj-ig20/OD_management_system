@@ -1,11 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use Exception;
+
+use App\Mail\MailNotify;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
-
 
 class DatabaseController extends Controller
 {
@@ -16,7 +21,7 @@ class DatabaseController extends Controller
 
       if($session_type == "Admin"){
 
-        $this->validate($request, [
+        $validatedata = $request->validate(  [
           'staff_id' => 'required',
           'first_name' => 'required',
           'last_name' => 'required',
@@ -76,7 +81,7 @@ class DatabaseController extends Controller
 
       if($session_type == "Admin"){
 
-        $this->validate($request, [
+        $validatedata = $request->validate( [
           'auto_id' => 'required',
           'first_name' => 'required',
           'last_name' => 'required',
@@ -247,7 +252,7 @@ class DatabaseController extends Controller
 
    if($session_type == "Admin"){
 
-     $this->validate($request, [
+    $validatedata = $request->validate( [
        'staff_id' => 'required',
        'username' => 'required',
        'password' => 'required',
@@ -290,7 +295,35 @@ class DatabaseController extends Controller
 
      if(DB::table('leave_data')->where(["auto_id"=>$auto_id])->update(['approval_status'=>"[ACCEPTED]"])){
 
-         return redirect()->back()->with('message', 'Accepted');
+
+        if($this->isOnline()){
+
+            $leavedata = DB::table('leave_data')->where(['auto_id'=> $auto_id])->get();
+            $staffid = $leavedata[0]->staff_id;
+            $staffdata=DB::table('staff_data')->where(['staff_id'=> $staffid])->get();
+            $mailid= $staffdata[0]->email;
+            //return $mailid;
+             $data1=[
+
+                 "recipient"=> "kavinraj.cs21@bitsathy.ac.in",
+                 "fromemail"=>"srisathyasai24680@gmail.com",
+                 "fromname"=> "Camps Site",
+                 "subject" => 'Reg: Leave request',
+                 "body"=> 'Your leave request as been accepted'
+
+             ];
+             try {
+                 Mail::to($mailid)->send(new MailNotify($data1));
+
+             } catch (Exception $th) {
+                 return 'mail not sent';
+             }
+             return redirect()->back()->with('message', 'Accepted');
+
+         }else{
+             return "No internet connection";
+         }
+
 
      }else{
 
@@ -306,6 +339,45 @@ class DatabaseController extends Controller
 
  }
 
+//  public function sendEmail(){
+
+//     if($this->isOnline()){
+
+//         $leavedata = DB::table('leave_data')->where(['auto_id'=> $auto_id])->get();
+//         $staffid = $leavedata[0]->staff_id;
+//         $staffdata=DB::table('staff_data')->where(['staff_id'=> $staffid])->get();
+//         $mailid= $staffdata[0]->email;
+//         //return $mailid;
+//          $data1=[
+
+//              "recipient"=> "kavinraj.cs21@bitsathy.ac.in",
+//              "fromemail"=>"srisathyasai24680@gmail.com",
+//              "fromname"=> "Camps Site",
+//              "subject" => 'Reg: Leave request',
+//              "body"=> 'Your leave request as been accepted'
+
+//          ];
+//          try {
+//              Mail::to("srisathyasai24680@gmail.com")->send(new MailNotify($data1));
+//          } catch (Exception $th) {
+//              return 'mail not sent';
+//          }
+
+//      }else{
+//          return "No internet connection";
+//      }
+
+//  }
+
+ public function isOnline($site = "https://youtube.com/"){
+    if(@fopen($site, "r")){
+        return true;
+    }
+    else{
+        return false;
+    }
+ }
+
  public function DeclineRequest($auto_id){
 
    $session_type = Session::get('Session_Type');
@@ -315,7 +387,37 @@ class DatabaseController extends Controller
 
      if(DB::table('leave_data')->where(["auto_id"=>$auto_id])->update(['approval_status'=>"[DECLINED]"])){
 
-         return redirect()->back()->with('message', 'Declined');
+        if($this->isOnline()){
+
+            $leavedata = DB::table('leave_data')->where(['auto_id'=> $auto_id])->get();
+            $staffid = $leavedata[0]->staff_id;
+            $staffdata=DB::table('staff_data')->where(['staff_id'=> $staffid])->get();
+            $mailid= $staffdata[0]->email;
+            //return $mailid;
+             $data1=[
+
+                 "recipient"=> "kavinraj.cs21@bitsathy.ac.in",
+                 "fromemail"=>"srisathyasai24680@gmail.com",
+                 "fromname"=> "Camps Site",
+                 "subject" => 'Reg: Leave request',
+                 "body"=> 'Your leave request as been declined'
+
+             ];
+             try {
+                 Mail::to($mailid)->send(new MailNotify($data1));
+
+             } catch (Exception $th) {
+                 return 'mail not sent';
+             }
+             return redirect()->back()->with('message', 'Declined');
+
+         }else{
+             return "No internet connection";
+         }
+
+
+
+
 
      }else{
 
@@ -416,7 +518,8 @@ class DatabaseController extends Controller
 
      if($session_type == "Staff"){
 
-       $this->validate($request, [
+       $validatedata= $request-> validate([
+
          'type_of_leave' => 'required',
          'description' => 'required',
          'from_date' => 'required|date',
