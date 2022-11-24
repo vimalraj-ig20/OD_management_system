@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
    <head>
-      <title>DreamSpace Leave Management</title>
+      <title>Login Page</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
@@ -55,7 +55,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
                                     </div>
-                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                    <input type="password" name="password" class="form-control" placeholder="Password" id="password" required>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <input class="form-check-label" type="checkbox" name="showpassword" onclick="showPassword()">
+                                    <label class="form-check-label" for="password"> Show Password</label>
                                 </div>
                                 <div class="form-check form-check-inline mb-3">
                                     <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="admin">
@@ -86,5 +90,15 @@
       <script src="{{asset('login-template')}}/js/popper.js"></script>
       <script src="{{asset('login-template')}}/js/bootstrap.min.js"></script>
       <script src="{{asset('login-template')}}/js/main.js"></script>
+      <script>
+        function showPassword(){
+            var x = document.getElementById('password');
+            if (x.type==="password"){
+                x.type='text';
+            }else{
+                x.type='password'
+            }
+        }
+      </script>
    </body>
 </html>

@@ -7,10 +7,12 @@
     <title>Email</title>
 </head>
 <body>
-<h1>Mail from Leave portal</h1>
-<h3>{{$data['body']}}</h3>
 
+Dear student,
+<br>
+        {{$data['body']}}
 
 
 </body>
 </html>
+

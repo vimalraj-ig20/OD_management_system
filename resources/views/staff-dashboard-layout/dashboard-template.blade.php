@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>DreamSpace Leave Manegement</title>
+    <title>Student Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('dashboard-template') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -80,7 +80,7 @@
 
                 </ul>
                 <!-- End of Sidebar -->
-         
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 

@@ -11,15 +11,15 @@ class MailNotify extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data1 = [];
+    public $data = [];
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data1)
+    public function __construct($data)
     {
-        $this->data = $data1;
+        $this->data = $data;
     }
 
     /**
