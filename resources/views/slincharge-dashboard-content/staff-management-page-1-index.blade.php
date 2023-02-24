@@ -1,4 +1,4 @@
-@extends('admin-dashboard-layout.dashboard-template')
+@extends('slincharge-dashboard-layout.dashboard-template')
 
 @section('dashboard-admin-content')
 
@@ -43,7 +43,7 @@
 
 
 
-    <div class="card">
+    {{-- <div class="card">
         <div class="card-body">
 
             <h3 class="panel-title" style="text-align:center;">Register Students</h3>
@@ -94,12 +94,12 @@
               <input type="text" class="form-control" id="position" name="position" placeholder="Enter Position/Role" required>
             </div> --}}
 
-                </div>
+                {{--</div>
                 <input class="btn btn-lg btn-primary" value="Register" type="submit">
             </form>
 
         </div>
-    </div>
+    </div> --}}
 
     <br>
 
@@ -139,13 +139,13 @@
 
                 </tbody>
             </table>
-            <form action="/import-data" method="POST" enctype="multipart/form-data">
+            {{-- <form action="/import-data" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group  col-sm-8">
                     <input type="file" name="xlupload" class="col-sm-5">
                     <button class="btn btn-outline-primary" type="submit">Upload</button>
                 </div>
-            </form>
+            </form> --}}
 
         </div>
     </div>

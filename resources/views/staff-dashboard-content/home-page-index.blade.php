@@ -48,8 +48,8 @@
             <h3 class="panel-title" style="text-align:center;">Requesting for leave</h3>
             <br>
 
-            <form action="/insert-leave-data-of-staff-account" method="POST">
-                {{ csrf_field() }}
+            <form action="/insert-leave-data-of-staff-account" method="POST" enctype=”multipart/form-data>
+                @csrf
 
                 <div class="form-group row">
                     <label for="type_of_leave" class="col-sm-2 col-form-label">Type of Leave</label>
@@ -61,7 +61,7 @@
                             <option value="Casual leave">Casual leave</option>
                             <option value="Onduty External">Onduty External</option>
                             <option value="Onduty Internal">Onduty Internal</option>
-              {{-- <option value="Paternity leave">Paternity leave</option>
+                            {{-- <option value="Paternity leave">Paternity leave</option>
               <option value="Bereavement leave">Bereavement leave</option>
               <option value="Compensatory leave">Compensatory leave</option>
               <option value="Sabbatical leave">Sabbatical leave</option>
@@ -82,30 +82,38 @@
 
                 <div class="form-group row">
                     <label for="from_date" class="col-sm-2 col-form-label">From Date</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <input type="date" class="form-control" id="from_date" name="from_date" required>
                     </div>
                     <label for="to_date" class="col-sm-2 col-form-label">To Date</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <input type="date" class="form-control" id="to_date" name="to_date" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="file" class="col-sm-2 col-form-label">Proof</label>
+                    <div class="col-sm-8">
+
+                        <input class="form-control" name="file" id="file" placeholder="Enter Drive Link" required autocomplete="off"/>
+
                     </div>
                 </div>
 
 
-                <div class="row">
+                <div class="form-group row">
                     <div class="col-3">
                         Session
                     </div>
                     <div class="form-check col-2">
                         <input class="form-check-input" type="radio" name="session" id="session" value="FN">
-                        <label class="form-check-label" for="session" >
+                        <label class="form-check-label" for="session">
                             FN
                         </label>
                     </div>
 
                     <div class="form-check col-2">
                         <input class="form-check-input" type="radio" name="session" id="session" value="AN">
-                        <label class="form-check-label" for="session" >
+                        <label class="form-check-label" for="session">
                             AN
                         </label>
                     </div>
@@ -115,8 +123,12 @@
                             Full Day
                         </label>
                     </div>
+                    <br>
+                    <br>
+
+
                 </div>
-                <br><br>
+
                 <div class="form-group row">
                     <label style="visibility:hidden;" for="button" class="col-sm-2 col-form-label">button</label>
                     <div class="col-sm-8">
@@ -139,12 +151,14 @@
             @foreach ($leave_pending_data as $key => $data)
                 <div class="card text-white bg-dark mb-3">
                     <div class="card-header bg-dark ">
-                        From Date: <strong>{{ $data->from_date }}</strong><br>To Date:<strong>{{ $data->to_date }}</strong><br>Session: <strong>{{ $data->session }}</strong>
+                        From Date: <strong>{{ $data->from_date }}</strong><br>To
+                        Date:<strong>{{ $data->to_date }}</strong><br>Session: <strong>{{ $data->session }}</strong>
                         <i class="float-right" style="font-size:85%;">Request sent on :- {{ $data->date_of_request }}</i>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $data->type_of_leave }}</h5>
                         <p class="card-text">{{ $data->description }}</p>
+                        <a href="{{$data->proof}}" style="color:yellow"><p class="card-text">View Proof</p></a>
                         <a class="btn btn-danger float-right confirmation"
                             href="/delete-leave-pending-request-in-staff-account/{{ $data->auto_id }}">Delete Request</a>
                     </div>

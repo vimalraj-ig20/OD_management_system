@@ -14,12 +14,12 @@ class LoginController extends Controller
         $this->validate($request, [
           'username' => 'required',
           'password' => 'required',
-          'login_type' => 'required',
+         // 'login_type' => 'required',
         ]);
 
         $user_entered_username    =    $request->username;
         $user_entered_password    =    $request->password;
-        $user_entered_login_type  =    $request->login_type;
+       // $user_entered_login_type  =    $request->login_type;
 
 
         $real_staff_id      = "";
@@ -27,7 +27,7 @@ class LoginController extends Controller
         $real_password      = "";
         $real_account_type  = "";
 
-        $user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username' AND account_type='$user_entered_login_type'"));
+        $user = DB::select( DB::raw("SELECT staff_id,username, password,account_type FROM user_account WHERE username ='$user_entered_username'"));
 
         foreach($user as $u){
 
@@ -58,7 +58,39 @@ class LoginController extends Controller
              return Redirect::to("/view-home-page-of-staff-account");
 
 
-           }
+           }else if($real_account_type == "sadmin"){
+
+            Session::put('Session_Type', 'sadmin');
+            Session::put('Session_Value', $real_username);
+
+            return Redirect::to("/view-staff-management-index");
+
+
+          }else if(str_contains($real_account_type, 'mentor')){
+
+            Session::put('Session_Type', 'mentor');
+            Session::put('Session_Value', $real_username);
+
+            return Redirect::to("/view-home-page");
+
+
+          }else if($real_account_type == "slhead"){
+
+            Session::put('Session_Type', 'slhead');
+            Session::put('Session_Value', $real_username);
+
+            return Redirect::to("/view-home-page");
+
+
+          }else if($real_account_type == "slincharge"){
+
+            Session::put('Session_Type', 'slincharge');
+            Session::put('Session_Value', $real_username);
+
+            return Redirect::to("/view-home-page");
+
+
+          }
 
         }else{
 

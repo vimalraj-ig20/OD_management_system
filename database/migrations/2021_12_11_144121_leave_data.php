@@ -23,8 +23,11 @@ class LeaveData extends Migration
         $table->date('from_date');
         $table->date('to_date');
         $table->string('session');
+        $table->string('proof');
         $table->datetime('date_of_request');
         $table->string('approval_status');
+        $table->string('updated_at')->nullable();
+        $table->string('created_at')->nullable();
 
       });
 

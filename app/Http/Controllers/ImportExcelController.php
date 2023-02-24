@@ -18,17 +18,13 @@ class ImportExcelController extends Controller
 
          $path = $request->file('xlupload');
 
-
         $extensions = array("xls","xlsx","xlm","xla","xlc","xlt","xlw");
 
         $result = array($request->file('xlupload')->getClientOriginalExtension());
-
 
         Excel::import(new Staff_import, $path);
 
         return redirect()->back()->with('message', 'Data Imported Successfully');
         //echo "hello";
-
-
     }
 }

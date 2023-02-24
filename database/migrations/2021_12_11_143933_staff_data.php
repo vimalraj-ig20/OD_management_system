@@ -22,6 +22,8 @@ class StaffData extends Migration
               $table->string('dob');
               $table->string('email');
               $table->string('phone_number');
+              $table->string('updated_at')->nullable();
+              $table->string('created_at')->nullable();
             //   $table->string('position');
         });
     }

@@ -1,4 +1,4 @@
-@extends('admin-dashboard-layout.dashboard-template')
+@extends('slincharge-dashboard-layout.dashboard-template')
 
 @section('dashboard-admin-content')
 
@@ -249,7 +249,7 @@
         <div class="card-body">
             <h3 class="panel-title" style="text-align:center;">My Leave History</h3>
 
-            {{-- <h4>Number of Leaves: <span style="text-weight:bold; color:blue;">{{ count($leave_data) }}</span> </h4> --}}
+            <h4>Number of Leaves: <span style="text-weight:bold; color:blue;">{{ count($leave_data) }}</span> </h4>
 
             <hr>
 

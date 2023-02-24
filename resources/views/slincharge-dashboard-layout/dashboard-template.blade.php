@@ -50,19 +50,19 @@
                     <span>Home</span></a>
             </li>
 
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="/view-staff-management-index">
                     <i class="fas fa-fw fa-users"></i>
                     <span>Student List</span></a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="/view-leave-history">
                     <i class="fas fa-fw fa-database"></i>
                     <span>Leave Log</span></a>
-            </li>
+            </li> --}}
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="/view-user-accounts-index">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Accounts Manage</span></a>
@@ -113,7 +113,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-3 d-none d-lg-inline" style="font-size: 18px; font-weight: bold;">Admin</span>
+                                <span class="mr-3 d-none d-lg-inline" style="font-size: 18px; font-weight: bold;">Special Lab Incharge</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{asset('dashboard-template')}}/img/undraw_profile.svg">
                             </a>

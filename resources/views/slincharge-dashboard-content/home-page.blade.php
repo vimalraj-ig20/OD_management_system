@@ -1,4 +1,4 @@
-@extends('admin-dashboard-layout.dashboard-template')
+@extends('slincharge-dashboard-layout.dashboard-template')
 
 @section('dashboard-admin-content')
 

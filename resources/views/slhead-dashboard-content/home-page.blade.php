@@ -1,4 +1,4 @@
-@extends('admin-dashboard-layout.dashboard-template')
+@extends('slhead-dashboard-layout.dashboard-template')
 
 @section('dashboard-admin-content')
 

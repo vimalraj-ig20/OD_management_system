@@ -9,6 +9,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link rel="stylesheet" href="{{asset('login-template')}}/css/style.css">
       <link rel="stylesheet" href="{{asset('login-template')}}/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+      <link href="{{asset('dashboard-template')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="{{asset('dashboard-template')}}/css/app.css">
+
+
    </head>
    <body>
    <div class="container-fluid ">
@@ -57,19 +62,35 @@
                                     </div>
                                     <input type="password" name="password" class="form-control" placeholder="Password" id="password" required>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <input class="form-check-label" type="checkbox" name="showpassword" onclick="showPassword()">
+                                <div class="form-check form-check-inline input-group mb-9">
+                                    <input class="form-check-input" type="checkbox" name="showpassword" onclick="showPassword()">
                                     <label class="form-check-label" for="password"> Show Password</label>
                                 </div>
+                                {{-- <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="sadmin">
+                                    <label class="form-check-label" for="inlineRadio1">SA Login</label>
+                                </div>
                                 <div class="form-check form-check-inline mb-3">
-                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="admin">
-                                    <label class="form-check-label" for="inlineRadio1">Admin Login</label>
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="mentor">
+                                    <label class="form-check-label" for="inlineRadio1">Mentor Login</label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="slhead">
+                                    <label class="form-check-label" for="inlineRadio1">Special lab head Login</label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_admin" value="slincharge">
+                                    <label class="form-check-label" for="inlineRadio1">Special lab incharge Login</label>
                                 </div>
 
                                 <div class="form-check form-check-inline mb-3">
+                                    <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="admin">
+                                    <label class="form-check-label" for="inlineRadio2">Admin Login</label>
+                                </div>
+                                <div class="form-check form-check-inline mb-3">
                                     <input class="form-check-input" type="radio" name="login_type" id="login_type_staff" value="staff">
                                     <label class="form-check-label" for="inlineRadio2">Student Login</label>
-                                </div>
+                                </div> --}}
                                 <div class="input-group center mb-3">
                                     <button type="submit" value="Login" class="btn btn-login btn-round">LOG IN</button>
                                 </div>
